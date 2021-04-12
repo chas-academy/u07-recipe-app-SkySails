@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  corsUrl: 'https://ancient-shelf-59832.herokuapp.com/',
 };
 
 /*
