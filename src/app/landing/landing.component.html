@@ -1,0 +1,34 @@
+<main>
+  <mat-grid-list cols="1" rowHeight="180px" class="list">
+    <mat-grid-tile *ngFor="let recipe of recipes">
+      <article>
+        <div class="recipe-img__container">
+          <img class="recipe-img" src="{{ recipe.ImageUrl }}" alt="" />
+        </div>
+        <section>
+          <h2>{{ recipe.Title }}</h2>
+          <small>{{ recipe.PreambleHTML }}</small>
+          <div class="recipe-info">
+            <div class="recipe-info__row">
+              <star-rating
+                [starType]="'svg'"
+                [rating]="recipe.AverageRating"
+                [readOnly]="true"
+              ></star-rating>
+              <span style="margin-left: 4px"
+                >({{ recipe.CurrentUsersRating }})</span
+              >
+            </div>
+            <div class="recipe-info__row">
+              <mat-icon aria-hidden="false" aria-label="Time icon"
+                >schedule</mat-icon
+              >
+              {{ recipe.CookingTime }} |
+              {{ recipe.IngredientGroups[0].Ingredients.length }} ingredienser
+            </div>
+          </div>
+        </section>
+      </article>
+    </mat-grid-tile>
+  </mat-grid-list>
+</main>
