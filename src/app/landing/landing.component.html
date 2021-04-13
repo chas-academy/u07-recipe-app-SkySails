@@ -8,9 +8,7 @@
   <mat-grid-list cols="1" rowHeight="180px" class="list">
     <mat-grid-tile *ngFor="let recipe of recipeService.recipes">
       <article>
-        <div class="recipe-img__container">
-          <img class="recipe-img" src="{{ recipe.ImageUrl }}" alt="" />
-        </div>
+        <div class="recipe-img" style="--bg: url({{ recipe.ImageUrl }})"></div>
         <section>
           <h2>{{ recipe.Title }}</h2>
           <small>{{ recipe.PreambleHTML }}</small>
