@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from 'src/models/Recipe';
+import { Recipe, IngredientGroup, Ingredient } from 'src/models/Recipe';
 import { RecipeService } from '../services/recipe.service';
 
 @Component({
@@ -8,15 +8,9 @@ import { RecipeService } from '../services/recipe.service';
   styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent implements OnInit {
-  constructor(private recipeService: RecipeService) {}
-
-  recipes: Recipe[] = [];
+  constructor(public recipeService: RecipeService) {}
 
   ngOnInit(): void {
-    this.getRecipes();
-  }
-
-  getRecipes() {
-    this.recipeService.getRandomRecipes().subscribe((r) => (this.recipes = r));
+    this.recipeService.getRandomRecipes();
   }
 }

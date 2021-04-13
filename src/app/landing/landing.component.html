@@ -1,6 +1,12 @@
 <main>
+  <mat-progress-bar
+    class="load-bar"
+    mode="indeterminate"
+    *ngIf="recipeService.searching"
+  ></mat-progress-bar>
+  <app-search></app-search>
   <mat-grid-list cols="1" rowHeight="180px" class="list">
-    <mat-grid-tile *ngFor="let recipe of recipes">
+    <mat-grid-tile *ngFor="let recipe of recipeService.recipes">
       <article>
         <div class="recipe-img__container">
           <img class="recipe-img" src="{{ recipe.ImageUrl }}" alt="" />
@@ -16,7 +22,7 @@
                 [readOnly]="true"
               ></star-rating>
               <span style="margin-left: 4px"
-                >({{ recipe.CurrentUsersRating }})</span
+                >({{ recipe.NumberOfUserRatings }})</span
               >
             </div>
             <div class="recipe-info__row">
@@ -24,7 +30,7 @@
                 >schedule</mat-icon
               >
               {{ recipe.CookingTime }} |
-              {{ recipe.IngredientGroups[0].Ingredients.length }} ingredienser
+              {{ recipe.IngredientCount }} ingredienser
             </div>
           </div>
         </section>

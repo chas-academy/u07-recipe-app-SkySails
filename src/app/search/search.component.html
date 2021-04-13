@@ -1,0 +1,13 @@
+<form class="example-form" (ngSubmit)="recipeService.getRecipesByQuery()">
+  <h2>Hitta ditt recept</h2>
+  <mat-form-field class="search-field">
+    <mat-label>Sök på ingrediens eller recept</mat-label>
+    <input
+      matInput
+      placeholder="Ex. Pizza"
+      [(ngModel)]="recipeService.query"
+      name="query"
+      autocomplete="off"
+    />
+  </mat-form-field>
+</form>

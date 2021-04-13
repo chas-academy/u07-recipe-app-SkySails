@@ -2,6 +2,14 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 4rem;
+}
+
+.load-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 mat-grid-tile {
@@ -14,6 +22,11 @@ article {
   padding: 1em;
   box-sizing: border-box;
   display: flex;
+
+  &:hover img {
+    width: 120%;
+    height: 120%;
+  }
 
   .recipe-img__container {
     background: transparent;

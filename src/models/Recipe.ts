@@ -29,6 +29,24 @@ export interface Recipe {
   CommentCount: number;
 }
 
+export interface RecipeSearchResult {
+  Id: number;
+  ImageId: number;
+  ImageUrl: string;
+  Title: string;
+  PreambleHTML: string;
+  Difficulty: string;
+  CookingTime: string;
+  CookingTimeAbbreviated: string;
+  CookingTimeMinutes: number;
+  CommentCount: number;
+  AverageRating: string;
+  IngredientCount: number;
+  OfferCount: number;
+  IsGoodClimateChoice: boolean;
+  NumberOfUserRatings: string;
+}
+
 export interface CookingStepsWithTimer {
   Description: string;
   TimersInMinutes: number[];
